@@ -1,0 +1,14 @@
+<%- include('head.ejs') %>
+<body>
+    <h1>Edit Post</h1>
+    <form id="edit-form">
+        <label for="new-title">New title</label>
+        <input type="text" name="new-title" value="<%= title %>">
+        <label for="new-content">New content</label>
+        <input type="text" name="new-content" value="<%= content %>">
+        <input type="submit" name="submit-btn" value="Edit Post">
+    </form>
+
+    <script src="form-data.js" type="module"></script>
+</body>
+</html>

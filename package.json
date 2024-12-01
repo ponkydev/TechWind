@@ -1,0 +1,16 @@
+{
+  "name": "techwind",
+  "version": "1.0.0",
+  "description": "Capstone project from Angela Yu full stack course.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Angel Henriquez",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}

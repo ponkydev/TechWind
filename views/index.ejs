@@ -1,0 +1,16 @@
+<%- include('head.ejs') %>
+<body>
+    <h1>TechWind</h1>
+    <% if (locals.allPosts) { %>
+        <% allPosts.forEach(post => { %>
+            <div>
+                <h2><%= post["title"] %></h2>
+                <p><%= post["content"] %></p>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No posts has been published yet</p>
+    <% } %>
+    <a href="create-post">Create a post</a>
+</body>
+</html>

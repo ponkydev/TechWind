@@ -1,0 +1,9 @@
+1. [X] App planning
+2. [] App logic
+3. [] Design
+4. [] Different EJS files
+5. [] Styling
+
+Small Todos
+1. [] Make the user able to edit a post. (It's hard to do with a form because it only allow POST and GET methods)
+2. [] Make the user able to delete a post.
