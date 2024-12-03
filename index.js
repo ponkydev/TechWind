@@ -66,11 +66,13 @@ app.get('/post/:index', (req, res) => {
 app.get('/edit-post/:index', (req, res) => {
     const postIndex = parseInt(req.params.index);
     const post = posts.find(p => p.index === postIndex);
+    const postTitle = post["title"];
+    const postContent = post["content"];
 
     res.render('edit-post.ejs', {
         index: postIndex,
-        title: post["title"],
-        content: post["content"]
+        title: postTitle,
+        content: postContent
     });
 });
 

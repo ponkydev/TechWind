@@ -1,4 +1,5 @@
 const form = document.getElementById('edit-post');
+const postIndex = document.getElementById('post-index');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -7,7 +8,7 @@ form.addEventListener('submit', async (e) => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-        const response = await fetch('/save-edited-post/:index', {
+        const response = await fetch(`/edit-post/${postIndex}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
