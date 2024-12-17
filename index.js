@@ -36,16 +36,6 @@ app.get('/create-post', (req, res) => {
     res.render('create-post.ejs');
 });
 
-// Save created post
-app.post('/save-post', (req, res) => {
-    const title = req.body["title"];
-    const content = req.body["content"];
-
-    newPost(title, content);
-
-    res.redirect(302, `/post/${posts.length - 1}`);
-});
-
 // View any post
 app.get('/post/:index', (req, res) => {
     const postIndex = parseInt(req.params.index);
@@ -60,6 +50,16 @@ app.get('/post/:index', (req, res) => {
     } else {
         res.status(404).send('Post no encontrado');
     };
+});
+
+// Save created post
+app.post('/save-post', (req, res) => {
+    const title = req.body["title"];
+    const content = req.body["content"];
+
+    newPost(title, content);
+
+    res.redirect(302, `/post/${posts.length - 1}`);
 });
 
 // Route to edit a post
@@ -77,7 +77,7 @@ app.get('/edit-post/:index', (req, res) => {
 });
 
 // Edit specific post
-app.put('/save-edited-post/:index', (req, res) => {
+app.post('/edit-post/:index', (req, res) => {
     const newTitle = req.body["new-title"];
     const newContent = req.body["new-content"];
 
@@ -96,14 +96,14 @@ app.put('/save-edited-post/:index', (req, res) => {
 // Route to delete a post
 app.delete('/delete-post/:index', (req, res) => {
     const postIndex = parseInt(req.params.index);
-    const post = posts.find(p => p.index === postIndex);
 
-    if (post) {
-        posts.splice(postIndex, 1);
-        res.redirect(302, `/`);
-    } else {
-        res.status(404).send('Post no encontrado');
+    if (isNaN(postIndex) || postIndex < 0 || postIndex >= posts.length) {
+        return res.status(404).send('Post no encontrado');
     };
+
+    posts.splice(postIndex, 1);
+
+    res.status(200).json({message: "Post eliminado correctamente."});
 });
 
 // Sets the port for the server

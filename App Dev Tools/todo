@@ -1,9 +1,15 @@
 1. [X] App planning
-2. [] App logic
+2. [X] App logic
 3. [] Design
 4. [] Different EJS files
 5. [] Styling
 
-Small Todos
-1. [] Make the user able to edit a post. (It's hard to do with a form because it only allow POST and GET methods)
-2. [] Make the user able to delete a post.
+App Logic
+1. [X] Make the user able to edit a post. (It's hard to do with a form because it only allow POST and GET methods)
+2. [X] Make the user able to delete a post.
+
+Design
+1. [X] Design Home Page.
+2. [] Design create post page.
+3. [] Design Post page.
+4. [] Create responsive design of the web.

@@ -4,6 +4,34 @@
     <h1><%= title %></h1>
     <p><%= content %></p>
     <a href="/edit-post/<%= index %>">Edit</a>
-    <a href="/delete-post/<%= index %>">Delete</a>
+    <button id="delete-btn">Delete</button>
+
+    <script>
+        const deleteBtn = document.getElementById("delete-btn");
+
+        deleteBtn.addEventListener("click", () => {
+            const currentPath = window.location.pathname;
+            const id = currentPath.split("/").pop();
+            const url = `/delete-post/${id}`;
+
+            fetch(url, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Post eliminado correctamente.");
+                    window.location.href = "/";
+                } else {
+                    alert("Error al eliminar un post.");
+                };
+            })
+            .catch(error => {
+                console.error("Error en la solicitud DELETE:", error);
+            });
+        });
+    </script>
 </body>
 </html>
