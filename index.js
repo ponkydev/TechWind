@@ -93,5 +93,18 @@ app.put('/save-edited-post/:index', (req, res) => {
     };
 });
 
+// Route to delete a post
+app.delete('/delete-post/:index', (req, res) => {
+    const postIndex = parseInt(req.params.index);
+    const post = posts.find(p => p.index === postIndex);
+
+    if (post) {
+        posts.splice(postIndex, 1);
+        res.redirect(302, `/`);
+    } else {
+        res.status(404).send('Post no encontrado');
+    };
+});
+
 // Sets the port for the server
 app.listen(port, () => { console.log(`Server running on port ${port}`) });
