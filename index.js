@@ -25,6 +25,7 @@ const newPost = (title, content) => {
 
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 // Home route
 app.get('/', (req, res) => {

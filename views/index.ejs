@@ -1,16 +1,22 @@
-<%- include('head.ejs') %>
+<%- include('head.ejs', { cssFile: 'home.css' }) %>
 <body>
-    <h1>TechWind</h1>
-    <% if (locals.allPosts) { %>
-        <% allPosts.forEach(post => { %>
-            <div>
-                <h2><%= post["title"] %></h2>
-                <p><%= post["content"] %></p>
+    <header>
+        <a href="/" class="logo-link">
+            <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
+        </a>
+    </header>
+    <main>
+        <section class="home">
+            <div class="publish-div">
+                <h1 class="title">
+                    You can also have your space here!
+                </h1>
+                <button class="publish-btn">
+                    Publish Now
+                </button>
             </div>
-        <% }); %>
-    <% } else { %>
-        <p>No posts has been published yet</p>
-    <% } %>
-    <a href="create-post">Create a post</a>
+            <img src="/img/girls-with-laptop.png" alt="Girls using a laptop">
+        </section>
+    </main>
 </body>
 </html>
