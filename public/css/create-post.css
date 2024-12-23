@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Handjet:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1,
+label {
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #21E9FF;
+    padding-inline: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* Header */
+header {
+    padding-block: 2rem;
+}
+
+.logo-link {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+    /* Main */
+main {
+    max-width: 1200px;
+    gap: 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.title {
+    font-family: "Handjet", serif;
+    font-size: clamp(4.5rem, 8vw, 6rem);
+    text-transform: capitalize;
+    width: 30vw;
+    min-width: 20rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-family: 'Gabarito', serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+label::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin-bottom: .5rem;
+}
+
+.post-title {
+    width: 22rem;
+    height: 2.4rem;
+    border: none;
+    font-family: 'Inter', serif;
+    padding-inline: .5rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+}
+
+.content {
+    width: 22rem;
+    height: 12rem;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    resize: none;
+}
+
+*::placeholder {
+    color: #C0C0C0;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    border: none;
+    background-color: #00B7CB;
+    font-family: "Gabarito", serif;
+    font-weight: 600;
+    transition: background-color .3s;
+    color: white;
+    padding: .8rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    transition: background-color .3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00A0B5;
+}

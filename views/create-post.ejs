@@ -1,12 +1,19 @@
-<%- include('head.ejs') %>
+<%- include('head.ejs', {cssFile: 'create-post.css'}) %>
 <body>
-    <h1>Create Post</h1>
-    <form action="/save-post" method="POST">
-        <label for="title">Title</label>
-        <input type="text" name="title">
-        <label for="content">Content</label>
-        <input type="text" name="content">
-        <input type="submit" name="submit-btn" value="Publish">
-    </form>
+    <header>
+        <a href="/" class="logo-link">
+            <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
+        </a>
+    </header>
+    <main>
+        <h1 class="title">Create your own post</h1>
+        <form action="/save-post" method="POST" class="form">
+            <label for="title">Title</label>
+            <input class="post-title" type="text" name="title" placeholder="This is the criptocoin for 2024">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" class="content" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."></textarea>
+            <input type="submit" name="submit-btn" value="Publish">
+        </form>
+    </main>
 </body>
 </html>

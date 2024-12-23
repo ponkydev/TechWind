@@ -1,7 +1,7 @@
 <%- include('head.ejs', { cssFile: 'home.css' }) %>
 <body>
     <!-- Home -->
-    <div class="home-container" id="home">
+    <div class="home-container" id="home-ctn">
         <header class="header">
             <a href="/" class="logo-link">
                 <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
@@ -12,7 +12,7 @@
                 <h1 class="title">
                     You can also have your space here!
                 </h1>
-                <button class="publish-btn">
+                <button onclick="window.location.href='/create-post'" class="publish-btn">
                     Publish Now
                 </button>
             </div>
@@ -25,7 +25,7 @@
         <h2 class="post-sect--h2">Published Posts</h2>
         <% allPosts.forEach(post => { %>
             <div class="post">
-                <a href="#" class="post-title"><%= post.title %></a>
+                <a href="/post/<%= post.index %>" class="post-title"><%= post.title %></a>
                 <p class="post-content">
                     <%= post.content %>
                 </p>
@@ -35,7 +35,7 @@
 
     <!-- Footer -->
     <footer>
-        <a href="#home" class="footer-link">Home ↑</a>
+        <a href="#home-ctn" class="footer-link">Home ↑</a>
         <h5 class="copyright">Copyright 2025©</h5>
     </footer>
 </body>
