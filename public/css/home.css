@@ -22,6 +22,16 @@ button {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    font-family: "Gabarito", serif;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 button {
     cursor: pointer;
     border: none;
@@ -35,6 +45,7 @@ button:hover {
     background-color: #00A0B5;
 }
 
+ /* Home */
 .home-container {
     display: grid;
     grid-template-rows: max-content 1fr;
@@ -85,7 +96,71 @@ button:hover {
 .home-img {
     position: absolute;
     width: min(40rem, 60%);
-    min-width: 25.6rem;
+    min-width: 24rem;
     bottom: 0;
     right: 0;
+}
+
+    /* Posts */
+.post-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding-block: 4rem;
+}
+
+.post-sect--h2 {
+    color: #00B7CB;
+    font-size: 2rem;
+    font-family: "Handjet", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+
+.post {
+    width: 70%;
+    min-height: 15rem;
+    max-height: 30rem;
+    background-color: #00B7CB;
+    border-radius: 1.8rem;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.post-title {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    font-family: "Inter", serif;
+    font-size: 1rem;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 19;
+    overflow: hidden;
+}
+
+    /* Footer */
+footer {
+    height: 6rem;
+    background-color: #00B7CB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-link {
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-family: "Inter", serif;
 }

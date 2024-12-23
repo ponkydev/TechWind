@@ -1,6 +1,7 @@
 <%- include('head.ejs', { cssFile: 'home.css' }) %>
 <body>
-    <div class="home-container">
+    <!-- Home -->
+    <div class="home-container" id="home">
         <header class="header">
             <a href="/" class="logo-link">
                 <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
@@ -18,5 +19,24 @@
             <img class="home-img" src="/img/girls-with-laptop.png" alt="Girls using a laptop">
         </main>
     </div>
+
+    <!-- Posts -->
+    <section class="post-sect">
+        <h2 class="post-sect--h2">Published Posts</h2>
+        <% allPosts.forEach(post => { %>
+            <div class="post">
+                <a href="#" class="post-title"><%= post.title %></a>
+                <p class="post-content">
+                    <%= post.content %>
+                </p>
+            </div>
+        <% }) %>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="footer-link">Home ↑</a>
+        <h5 class="copyright">Copyright 2025©</h5>
+    </footer>
 </body>
 </html>
