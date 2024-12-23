@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Handjet:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -9,11 +11,81 @@ img {
     width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: #00B7CB;
+    font-family: "Gabarito", serif;
+    font-weight: 600;
+    transition: background-color .3s;
+}
+
+button:hover {
+    background-color: #00A0B5;
+}
+
+.home-container {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    min-height: 100vh;
+    background: linear-gradient(to right,#21E9FF, #CCFAFF);
+}
+
+.header {
+    padding-block: 2rem;
+}
+
 .logo-link {
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
     margin: auto;
+}
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.publish-div {
+    margin-left: 4rem;
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-family: "Handjet", serif;
+    font-size: clamp(4rem, 6vw, 6rem);
+    text-transform: uppercase;
+    width: 30%;
+    min-width: 20rem;
+    margin-bottom: 1rem;
+}
+
+.publish-btn {
+    padding: .8rem 1.8rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+}
+
+.home-img {
+    position: absolute;
+    width: min(40rem, 60%);
+    min-width: 25.6rem;
+    bottom: 0;
+    right: 0;
 }

@@ -1,12 +1,12 @@
 <%- include('head.ejs', { cssFile: 'home.css' }) %>
 <body>
-    <header>
-        <a href="/" class="logo-link">
-            <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
-        </a>
-    </header>
-    <main>
-        <section class="home">
+    <div class="home-container">
+        <header class="header">
+            <a href="/" class="logo-link">
+                <img src="/img/techwind.png" class="logo-img" alt="TechWind logo">
+            </a>
+        </header>
+        <main class="home">
             <div class="publish-div">
                 <h1 class="title">
                     You can also have your space here!
@@ -15,8 +15,8 @@
                     Publish Now
                 </button>
             </div>
-            <img src="/img/girls-with-laptop.png" alt="Girls using a laptop">
-        </section>
-    </main>
+            <img class="home-img" src="/img/girls-with-laptop.png" alt="Girls using a laptop">
+        </main>
+    </div>
 </body>
 </html>
