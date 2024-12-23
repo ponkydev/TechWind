@@ -74,15 +74,15 @@ button:hover {
 }
 
 .publish-div {
-    margin-left: 4rem;
+    margin-left: 10vw;
     margin-bottom: 5rem;
 }
 
 .title {
     font-family: "Handjet", serif;
-    font-size: clamp(4rem, 6vw, 6rem);
+    font-size: clamp(4.5rem, 6vw, 6rem);
     text-transform: uppercase;
-    width: 30%;
+    width: 35%;
     min-width: 20rem;
     margin-bottom: 1rem;
 }
@@ -112,7 +112,6 @@ button:hover {
 
 .post-sect--h2 {
     color: #00B7CB;
-    font-size: 2rem;
     font-family: "Handjet", serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -163,4 +162,66 @@ footer {
 
 .copyright {
     font-family: "Inter", serif;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .home-img {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .publish-div {
+        margin-left: 0;
+        margin-bottom: 0;
+        width: min-content;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    .title {
+        width: 60vw;
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    a {
+        text-decoration: underline;
+    }
+
+    .home-container {
+        padding-inline: 1rem;
+    }
+
+    .title {
+        font-size: clamp(3rem, 14vw, 3.4rem);
+        min-width: auto;
+    }
+
+    .home-img {
+        width: 100%;
+        max-width: 24rem;
+        min-width: auto;
+    }
+
+    .post-sect--h2 {
+        font-size: 2.8rem;
+    }
+
+    .post {
+        max-height: 20rem;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-content {
+        -webkit-line-clamp: 10;
+    }
 }
