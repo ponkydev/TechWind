@@ -19,10 +19,10 @@ label {
 body {
     min-height: 100vh;
     background-color: #21E9FF;
-    padding-inline: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 2rem;
 }
 
     /* Header */
@@ -41,20 +41,31 @@ header {
 
     /* Main */
 main {
-    max-width: 1200px;
-    gap: 20vw;
+    max-width: 1050px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 4vh;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
 }
 
 .title {
     font-family: "Handjet", serif;
     font-size: clamp(4.5rem, 8vw, 6rem);
     text-transform: capitalize;
-    width: 30vw;
+    width: 32vw;
     min-width: 20rem;
+}
+
+.add-post-img {
+    max-width: 15rem;
 }
 
 .form {
@@ -118,4 +129,38 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #00A0B5;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-bottom: 2rem;
+    }
+
+    main {
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 3rem;
+    }
+    
+    .main-div {
+        align-items: center;
+        text-align: center;
+    }
+
+    .add-post-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .title {
+        font-size: clamp(3.5rem, 15vw, 4rem);
+        min-width: 15rem;
+        width: 80%;
+    }
+
+    .post-title,
+    .content {
+        width: 80vw;
+    }
 }
