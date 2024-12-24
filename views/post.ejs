@@ -1,13 +1,35 @@
-<%- include('head.ejs') %>
+<%- include('head.ejs', {cssFile: 'post.css'}) %>
 <body>
-    <a href="/">Home</a>
-    <h1><%= title %></h1>
-    <p><%= content %></p>
-    <a href="/edit-post/<%= index %>">Edit</a>
-    <button id="delete-btn">Delete</button>
+    <%- include('header.ejs') %>
+    <main>
+        <div class="post-div">
+            <h1 class="post-title"><%= title %></h1>
+            <p class="post-content"><%= content %></p>
+        </div>
+        <div class="options">
+            <h3 class="options-h3" id="options-h3">Options <span class="arrow" id="arrow">></span></h3>
+            <div class="options-div" id="options-div">
+                <button onclick="window.location.href='/edit-post/<%= index %>'" class="edit-post">Edit post</button>
+                <button class="delete-post" id="delete-btn">Delete post</button>
+            </div>
+        </div>
+    </main>
 
     <script>
         const deleteBtn = document.getElementById("delete-btn");
+        const optionsH3 = document.getElementById("options-h3");
+        const optionsDiv = document.getElementById("options-div");
+        const optionsArrow = document.getElementById("arrow");
+
+        optionsH3.addEventListener("click", () => {
+            if (getComputedStyle(optionsDiv).visibility === "hidden") {
+                optionsDiv.classList.add("visible");
+                optionsArrow.classList.add("rotate-arrow");
+            } else {
+                optionsDiv.classList.remove("visible");
+                optionsArrow.classList.remove("rotate-arrow");
+            };
+        });
 
         deleteBtn.addEventListener("click", () => {
             const currentPath = window.location.pathname;

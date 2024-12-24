@@ -53,7 +53,7 @@ button:hover {
     background: linear-gradient(to right,#21E9FF, #CCFAFF);
 }
 
-.header {
+header {
     padding-block: 2rem;
 }
 
