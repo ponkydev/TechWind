@@ -1,12 +1,17 @@
-<%- include('head.ejs') %>
+<%- include('head.ejs', {cssFile: 'create-edit-post.css'}) %>
 <body>
-    <h1>Edit Post <span id="post-index"><%= index %></span></h1>
-    <form action="/edit-post/<%= index %>" method="post">
-        <label for="new-title">New title</label>
-        <input type="text" name="new-title" value="<%= title %>">
-        <label for="new-content">New content</label>
-        <input type="text" name="new-content" value="<%= content %>">
-        <input type="submit" name="submit-btn" value="Edit Post">
-    </form>
+    <%- include('header.ejs') %>
+    <main>
+        <div class="main-div">
+            <h1 class="title">Edit post however you like!</h1>
+        </div>
+        <form action="/edit-post/<%= index %>" method="POST" class="form">
+            <label for="title">New Title</label>
+            <input class="post-title" type="text" name="new-title" value="<%= title %>">
+            <label for="content">New Content</label>
+            <textarea name="new-content" id="content" class="content"><%= content %></textarea>
+            <input type="submit" name="submit-btn" value="Edit">
+        </form>
+    </main>
 </body>
 </html>
