@@ -38,6 +38,7 @@ app.use(express.static('public'));
 
 // Home route
 app.get('/', (req, res) => {
+    posts.sort((a, b) => b.index - a.index);
     res.render('index.ejs', { allPosts: posts });
 });
 
